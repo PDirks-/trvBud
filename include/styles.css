@@ -10,12 +10,14 @@
 
 #body{
 	background-color: white;
-	font-family: arch;	
+	//font-family: arch;	
 }
 
-.input-group-addon {
-	width: 50%;
+
+#dopeDiv .input-group-addon {
+	width: 20%;
 }
+
  
 #tit {
 	text-align: center;
@@ -24,7 +26,21 @@
 	font-family: arch;
 }
 
+#map-canvas {
+    width: 900px;
+    height: 500px;
+	margin: 0 auto;
+}
+
 #dopeDiv {
-	width: 20%;
+	width: 30%;
+}
+
+#cityOptions {
+	width: 50%;
+}
+
+.input-group .form-control .dates {
+	width: 10px;
 }
 	

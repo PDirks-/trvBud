@@ -57,27 +57,27 @@
 });*/
 
 $( "#city-in" ).keypress(function(event) {
-	console.dir("keydown!");
+//	console.dir("keydown!");
 	populate();
 });
 
 // function to be called on every key press in the text-box
 function populate(){
 	var input = $('#city-in').val();
-	console.dir(input);
+//	console.dir(input);
 	options = {
-		"url": "https://babbage.cs.missouri.edu/~pld9bc/hackillinois/trvBud/index.php",
 		"content": "data",
 		"dataType": 'jsonp',
 		"format": "json"
 	};
-	$.get("https://babbage.cs.missouri.edu/~pld9bc/hackillinois/trvBud/include/util/autoTextbox.php?search="+input, options, function(data) {
+	$.get("./include/util/autoTextbox.php?search="+input, options, function(data) {
 		processData(data);
 	});// end get
 }// end populate
 
 function processData( data ){
-//	console.dir(data);
+	console.dir("getting...")
+	console.dir(data);
 }// end processData
 
 	</script>

@@ -3321,12 +3321,7 @@ fieldset[disabled] .btn-link:focus {
   color: #777;
   text-decoration: none;
 }
-<<<<<<< HEAD
 
-@font-face {
-    font-family: grandHotel;
-    src: url("include/GrandHotel-Regular.otf") format("opentype");
-}
 
 .btn-lg,
 .btn-group-lg > .btn {
@@ -3335,16 +3330,8 @@ fieldset[disabled] .btn-link:focus {
   line-height: 1.3333333;
   border-radius: 6px;
   color: orange;
-  font-family: grandHotel;
+  font-family: arch;
   zoom: 150%;
-=======
-.btn-lg,
-.btn-group-lg > .btn {
-  padding: 10px 16px;
-  font-size: 18px;
-  line-height: 1.3333333;
-  border-radius: 6px;
->>>>>>> b2561b76be73b3a7b9a412f489353785fe3a6674
 }
 .btn-sm,
 .btn-group-sm > .btn {

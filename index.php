@@ -21,7 +21,8 @@
 });*/
 
 $( "#city-in" ).keydown(function() {
-	alert( "Handler for .keydown() called." );
+	console.dir("keydown!");
+	populate();
 });
 
 // function to be called on every key press in the text-box
@@ -82,6 +83,5 @@ function processData( data ){
 		
 	<!-- run scripts at end of page for faster loading -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="include/bootstrap/js/bootstrap.min.js"></script>
-   	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="include/bootstrap/dist/js/bootstrap.min.js"></script>
  </body>

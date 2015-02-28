@@ -12,7 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="include/styles.css">
 	
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="./include/main.js"></script>	
+	<!--<script src="./include/main.js"></script>	-->
 	<title>trvBud</title>
 	<script>
 /*$('#city-in').bind("keydown", function() {

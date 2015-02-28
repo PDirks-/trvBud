@@ -13,11 +13,11 @@ include("../secure/database.php");
 			from trvCities.cities as cit
 			inner join trvCities.countries as count
 			on cit.country=count.countryName
-			where cit.country=$1;";
+			where cit.city=$1;";
 		session_start();
-		$country = htmlspecialchars($_POST['country']);
+		$city = htmlspecialchars($_GET['city']);
 		pg_prepare($conn, "check", $query);
-		$result = pg_execute($conn, "check", array($country));
+		$result = pg_execute($conn, "check", array($city));
 		$result = pg_fetch_array($result, null, PGSQL_ASSOC);
 	
 	/*

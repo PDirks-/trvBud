@@ -10,7 +10,7 @@ header("Access-Control-Allow-Origin: *");
 
 if( !isnull($search) ){
 
-	$q = "select city, country from trv.cities where ( city_raw ilike 'paris%' ) order by population desc limit 10";	// build query
+	$q = "select city, country, population::integer from trv.cities where ( city_raw ilike 'paris%' ) order by population::integer desc limit 10";	// build query
 	$result = pg_query($q) or die('Query failed: ' . pg_last_error());
 	
 	$cities = array();

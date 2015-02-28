@@ -1,0 +1,22 @@
+@font-face {
+    font-family: grandHotel;
+    src: url("include/GrandHotel-Regular.otf") format("opentype");
+}
+
+#body{
+	background-color: white;
+	font-family: grandHotel;	
+}
+
+.input-group-addon {
+	width: 50%;
+}
+ 
+#tit {
+	text-align: center;
+	font-size: 70px;
+	color: orange;
+	font-family: grandHotel;
+}
+
+

@@ -12,37 +12,6 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<!--<script src="./include/main.js"></script>	-->
 	<title>trvBud</title>
-	<script>
-/*$('#city-in').bind("keydown", function() {
-	console.dir("boop");
-	populate();
-});*/
-
-$( "#city-in" ).keydown(function() {
-	console.dir("keydown!");
-	populate();
-});
-
-// function to be called on every key press in the text-box
-function populate(){
-	var input = $('#city-in').val();
-	console.dir(input);
-	options = {
-		"url": "https://babbage.cs.missouri.edu/~pld9bc/hackillinois/trvBud/include/util/autoTextbox.php",
-		"content": "data",
-		"format": "json"
-	};
-	$.get("https://babbage.cs.missouri.edu/~pld9bc/hackillinois/trvBud/include/util/autoTextbox.php?search="+input, options, function(data) {
-		processData(data);
-	});// end get
-}// end populate
-
-function processData( data ){
-	console.dir(data);
-}// end processData
-
-	</script>
-	
 </head>
 <body id="body">
 	<!--
@@ -80,6 +49,39 @@ function processData( data ){
 
 		
 	<!-- run scripts at end of page for faster loading -->
+	
+	<script>
+/*$('#city-in').bind("keydown", function() {
+	console.dir("boop");
+	populate();
+});*/
+
+$( "#city-in" ).keypress(function(event) {
+	console.dir("keydown!");
+	populate();
+});
+
+// function to be called on every key press in the text-box
+function populate(){
+	var input = $('#city-in').val();
+	console.dir(input);
+	options = {
+		"url": "https://babbage.cs.missouri.edu/~pld9bc/hackillinois/trvBud/index.php",
+		"content": "data",
+		"dataType": 'jsonp',
+		"format": "json"
+	};
+	$.get("https://babbage.cs.missouri.edu/~pld9bc/hackillinois/trvBud/include/util/autoTextbox.php?search="+input, options, function(data) {
+		processData(data);
+	});// end get
+}// end populate
+
+function processData( data ){
+//	console.dir(data);
+}// end processData
+
+	</script>
+	
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="include/bootstrap/dist/js/bootstrap.min.js"></script>
  </body>

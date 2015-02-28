@@ -1,6 +1,7 @@
 <?php// textbox autofill
 
 include("../../secure/database.php");	// login information for server
+
 $conn = pg_connect(HOST." ".DBNAME." ".USERNAME." ".PASSWORD) or die("Failed to connect to the database");
 	
 $search = htmlspecialchars( $_GET['search'] );	// grab query from 
@@ -20,7 +21,10 @@ if( !isnull($search) ){
 	/*
 	 *	Finally return data as json
 	 */		
-	header('Content-type: application/json');
+
+	header('Access-Control-Allow-Origin: *');										// THIS FIXES CORS ISSUE!!!!!
+	header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
+
 	echo json_encode( $cities );							// encode array, return
 	
 }// end null-check

@@ -6,7 +6,7 @@
                 exit;
         }
 	
-	include('../secure/database.php');
+	include('../../secure/database.php');
 ?>
 
 <!doctype html>
@@ -64,7 +64,7 @@
 			include("../secure/database.php");
 			$dbconn = pg_connect(HOST." ".DBNAME." ".USERNAME." ".PASSWORD) or die('Could not connect: ' . pg_last_error());
 			//check if user exists in authentication table
-			$result = pg_prepare($dbconn,"User_Check", "");					// create query to check if username exists...
+			$result = pg_prepare($dbconn,"User_Check", "SELECT * FROM trv.authentication WHERE username = $1");					// create query to check if username exists...
 			$result = pg_execute($dbconn,"User_Check", array($user));
 			$rows = pg_num_rows($result);
 			//if username exists, check password attempt
@@ -73,13 +73,13 @@
 				$pwh = sha1($pass);
 				$attempt = sha1($pwh + $salt);
 				//attempt to login using supplied credentials
-				$result = pg_prepare($dbconn, "Login_Attempt", "");			// create query to check if password match
+				$result = pg_prepare($dbconn, "Login_Attempt", "SELECT * FROM trv.authentication WHERE username = $1 AND password_hash = $2");
 				$result = pg_execute($dbconn, "Login_Attempt", array($user,$attempt));
 				$rows = pg_num_rows($result);
 				//if credentials match, log the action of user
 				if ($rows == 1) {
 					$ip = $_SERVER['REMOTE_ADDR'];
-					$result = pg_prepare($dbconn,"Log_Activity","");		// create query to add to log
+					$result = pg_prepare($dbconn,"Log_Activity","INSERT INTO trv.log (username,ip_address,log_date,action) VALUES($1,$2,default,'Account Login')");
 					$result = pg_execute($dbconn, "Log_Activity",array($user,$ip));
 					session_start();
 					$_SESSION['login_user']=$user;

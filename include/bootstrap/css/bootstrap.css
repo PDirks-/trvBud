@@ -3321,6 +3321,7 @@ fieldset[disabled] .btn-link:focus {
   color: #777;
   text-decoration: none;
 }
+<<<<<<< HEAD
 
 @font-face {
     font-family: grandHotel;
@@ -3336,6 +3337,14 @@ fieldset[disabled] .btn-link:focus {
   color: orange;
   font-family: grandHotel;
   zoom: 150%;
+=======
+.btn-lg,
+.btn-group-lg > .btn {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+>>>>>>> b2561b76be73b3a7b9a412f489353785fe3a6674
 }
 .btn-sm,
 .btn-group-sm > .btn {

@@ -44,9 +44,7 @@
 		</div>
 	</div>
 
-			
-	
-    
+		
 	<!-- run scripts at end of page for faster loading -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="include/bootstrap/dist/js/bootstrap.min.js"></script>

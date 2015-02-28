@@ -7,18 +7,20 @@
 	<link href="include/bootstrap/css/bootstrap.css" rel="stylesheet">
 	<!-- Bootstrap theme -->
 	<link href="include/bootstrap/css/bootstrap-theme.css" rel="stylesheet">
-	<link href="include/ajax.js">
-	<script src="include/main.js"></script>
+	<!--<link href="include/ajax.js">-->
+	<!--<script src="include/main.js"></script>-->
+	<script src="include/jquery-1.10.2.js"></script>
 	<link rel="stylesheet" type="text/css" href="include/styles.css">
 	
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
 	<!--<script src="./include/main.js"></script>	-->
 	<title>trvBud</title>
 	<script>
-/*$('#city-in').bind("keydown", function() {
-	console.dir("boop");
-	populate();
-});*/
+
+$( "#test" ).click(function() {
+	console.dir("test!");
+});
+
 
 $( "#city-in" ).keydown(function() {
 	console.dir("keydown!");
@@ -71,17 +73,18 @@ function processData( data ){
 		<center>
 		<br>
 		<div class="input-group" id="dopeDiv">
-		  <input type="text" class="form-control" placeholder="Name or Zipcode.." aria-describedby="basic-addon1">
+		  <input type="text" class="form-control" placeholder="Name or Zipcode.." aria-describedby="basic-addon1" id="city-in">
 		</div>
 		<br>
 		<!--Adding a new part-->
 		<div class="input-group">
 		  <button type="button" class="btn btn-default" action="addCity()">+</button>
+  		  <button type="button" class="btn btn-default" id="test">+</button>
 		</div>
 	</div>
 
 		
 	<!-- run scripts at end of page for faster loading -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
     <script src="include/bootstrap/dist/js/bootstrap.min.js"></script>
  </body>

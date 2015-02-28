@@ -52,11 +52,11 @@
 		}
 		else{
 			//connect to database
-		include("../secure/database.php");
+		include("../../secure/database.php");
         $conn = pg_connect(HOST." ".DBNAME." ".USERNAME." ".PASSWORD)
 	        or die('Could not connect: ' . pg_last_error());
 			//check if username exists in database
-			$result = pg_prepare($conn,"Check", "");						// create query to check if username exits
+			$result = pg_prepare($conn,"Check", "SELECT * FROM trv.authentication WHERE username = $1");
 			$result = pg_execute($conn,"Check",array($user));
 			$rows = pg_num_rows($result);
 			//if username exists, print error
@@ -75,10 +75,11 @@
 				//get current date and time
 				$date = date('Y/m/d H:i:s');
 				//create user info and authentication entry in database
-				$result = pg_prepare($conn,"Create_User_Info", "");			// create query that adds userinfo?
+				$result = pg_prepare($conn,"Create_User_Info", "INSERT INTO trv.profile (username, registration_date) VALUES($1, default)");
 				$result = pg_execute($conn,"Create_User_Info", array($user)) or die('create user info ex fail: ' . pg_last_error());
 				
-				$result = pg_prepare($conn,"Create_User","") or die('auth prep failed: ' . pg_last_error());	// create query that adds user
+				$result = pg_prepare($conn,"Create_User","INSERT INTO trv.authentication VALUES($1,$2,$3)") 
+					or die('auth prep failed: ' . pg_last_error());	// create query that adds user
 				$result = pg_execute($conn,"Create_User",array($user,$ph,$salt)) or die('auth exc failed: ' . pg_last_error());;
 				//get client ip
 				$ip = $_SERVER['REMOTE_ADDR'];

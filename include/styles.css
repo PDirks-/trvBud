@@ -1,11 +1,16 @@
 @font-face {
     font-family: grandHotel;
-    src: url("include/GrandHotel-Regular.otf") format("opentype");
+    src: url("GrandHotel-Regular.otf") format("opentype");
+}
+
+@font-face {
+	font-family: arch;
+    src: url("Archistico.ttf") format("truetype");
 }
 
 #body{
 	background-color: white;
-	font-family: grandHotel;	
+	font-family: arch;	
 }
 
 .input-group-addon {
@@ -16,7 +21,7 @@
 	text-align: center;
 	font-size: 70px;
 	color: orange;
-	font-family: grandHotel;
+	font-family: arch;
 }
 
 #dopeDiv {

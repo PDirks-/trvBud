@@ -7,6 +7,8 @@
 	<link href="include/bootstrap/css/bootstrap.css" rel="stylesheet">
 	<!-- Bootstrap theme -->
 	<link href="include/bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+	<link href="include/ajax.js">
+	<script src="include/main.js"></script>
 	<link rel="stylesheet" type="text/css" href="include/styles.css">
 	<title>trvBud</title>
 </head>
@@ -27,14 +29,14 @@
 	<br>
 	
 	<div id="tit">	
-		<button type="button" class="btn btn-default btn-lg" action="create">trvBud</button>
+		<button type="button" class="btn btn-default btn-lg" action="create()">trvBud</button>
 	</div>
 	
 
 	<div id="addCities">
 		<center>
 		<br>
-		<div class="input-group">
+		<div class="input-group" id="dopeDiv">
 		  <input type="text" class="form-control" placeholder="Name or Zipcode.." aria-describedby="basic-addon1">
 		</div>
 		<br>
@@ -47,5 +49,5 @@
 		
 	<!-- run scripts at end of page for faster loading -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="include/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="include/bootstrap/js/bootstrap.js"></script>
  </body>

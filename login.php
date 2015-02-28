@@ -52,7 +52,7 @@
 	//if submit button is pressed, login
 	if(isset($_POST['submit'])){
 		$user = $_POST['username'];
-		$pass = $_POST{'password'};
+		$pass = $_POST['password'];
 		$error='';
 		//if username or password field is empty, print error
 		if (empty($user) || empty($pass)){
@@ -73,7 +73,8 @@
 				$pwh = sha1($pass);
 				$attempt = sha1($pwh + $salt);
 				//attempt to login using supplied credentials
-				$result = pg_prepare($dbconn, "Login_Attempt", "SELECT * FROM trv.authentication WHERE username = $1 AND password_hash = $2");
+				echo $attempt.", ".$user;
+				$result = pg_prepare($dbconn, "Login_Attempt", "SELECT * FROM trv.authentication WHERE username = $1 AND passwrd = $2");
 				$result = pg_execute($dbconn, "Login_Attempt", array($user,$attempt));
 				$rows = pg_num_rows($result);
 				//if credentials match, log the action of user

@@ -1,0 +1,23 @@
+.city-row {
+	text-align: center;
+}
+
+.left-side{
+	text-align: center;
+}
+
+.right-pane{
+
+}
+
+#map-canvas{
+
+	width: 90%;
+
+}
+
+#go{
+
+	padding: 0px;
+
+}
